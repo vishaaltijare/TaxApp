@@ -34,15 +34,13 @@ export default function Step2Salary({ onNext, onBack }) {
       <div className="mb-8">
         <p className="section-label mb-2">Step 2 of 13 — Salary</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
-          What is your Annual Gross Salary?
+          What was your Annual Gross Salary for FY 2025–26?
         </h2>
         <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
           <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           This is your total yearly income before any deductions.
         </p>
-        <p className="text-brand-muted mt-2 text-sm leading-relaxed">
-          Enter your <strong>Gross Salary</strong> before PF, taxes, and any other deductions.
-        </p>
+
       </div>
 
       <CurrencyInput
@@ -51,7 +49,7 @@ export default function Step2Salary({ onNext, onBack }) {
         onChange={handleChange}
         placeholder="12,00,000"
         error={error}
-        hint="Look for 'Gross Salary' on your CTC or Form 16"
+        hint="Enter your total yearly salary before PF, taxes, and other deductions."
         min={MIN}
         max={MAX}
       />
