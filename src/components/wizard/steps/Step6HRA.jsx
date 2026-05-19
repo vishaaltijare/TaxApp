@@ -5,8 +5,8 @@ import CurrencyInput from '../CurrencyInput'
 import FaqAccordion from '../FaqAccordion'
 
 const HRA_OPTIONS = [
-  { value: 'yes', label: 'Yes, I receive HRA', description: 'HRA is mentioned as a separate component in your salary slip' },
-  { value: 'no', label: 'No, I don\'t receive HRA', description: 'Your salary structure does not include House Rent Allowance' },
+  { value: 'yes', icon: '💰', label: 'Yes, I receive HRA', description: 'HRA is mentioned as a separate component in your salary slip' },
+  { value: 'no', icon: '🚫', label: 'No, I don\'t receive HRA', description: 'Your salary structure does not include House Rent Allowance' },
   { value: 'not_sure', label: 'I\'m not sure', description: 'We\'ll assume standard 40% basic salary for calculation purposes' },
 ]
 
@@ -53,6 +53,10 @@ export default function Step6HRA({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Does your salary include HRA?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Enter the HRA allowance component from your salary slip.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           House Rent Allowance (HRA) is a common salary component used to save tax.
         </p>

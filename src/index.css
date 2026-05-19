@@ -40,35 +40,36 @@
 @layer components {
   /* ── Buttons ── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg
-           bg-brand-blue text-white font-semibold text-base
-           transition-all duration-200 ease-in-out
-           hover:bg-brand-blue-dark hover:shadow-lg hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2
-           disabled:bg-brand-border-hover disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl
+           bg-brand-orange text-white font-semibold text-base shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]
+           transition-all duration-300 ease-out
+           hover:bg-[#EA580C] hover:shadow-[0_6px_20px_rgba(249,115,22,0.23)] hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2
+           disabled:bg-brand-border disabled:text-brand-muted disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg
-           bg-white text-brand-blue font-semibold text-base border border-brand-border
-           transition-all duration-200 ease-in-out
-           hover:bg-slate-50 hover:border-brand-blue hover:shadow-sm
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl
+           bg-white text-brand-blue font-semibold text-base border-2 border-brand-border/80 shadow-sm
+           transition-all duration-300 ease-out
+           hover:bg-brand-blue-xlight hover:border-brand-blue-light hover:shadow-md hover:-translate-y-0.5
            focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   /* ── Cards ── */
   .card {
-    @apply bg-white rounded-2xl shadow-card border border-brand-border;
+    @apply bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-brand-border/60 transition-shadow duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)];
   }
 
   /* ── Input fields ── */
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-brand-border
-           text-base text-brand-text bg-white
-           transition-all duration-200
-           focus:outline-none focus:border-brand-blue focus:shadow-focus
-           placeholder:text-brand-border-hover;
+    @apply w-full px-5 py-4 rounded-xl border-2 border-brand-border/80
+           text-base text-brand-text bg-white shadow-sm
+           transition-all duration-300 ease-out
+           focus:outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10
+           hover:border-brand-border-hover
+           placeholder:text-brand-muted/70;
   }
 
   /* ── Section label ── */

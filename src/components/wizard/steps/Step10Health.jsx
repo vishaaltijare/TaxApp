@@ -5,8 +5,8 @@ import CurrencyInput from '../CurrencyInput'
 import FaqAccordion from '../FaqAccordion'
 
 const HEALTH_OPTIONS = [
-  { value: 'yes', label: 'Yes, I pay medical insurance premiums', description: 'For self, family, or parents (Section 80D)' },
-  { value: 'no', label: 'No, I don\'t', description: 'No personal medical insurance (corporate doesn\'t count)' },
+  { value: 'yes', icon: '🏥', label: 'Yes, I pay medical insurance premiums', description: 'For self, family, or parents (Section 80D)' },
+  { value: 'no', icon: '🚫', label: 'No, I don\'t', description: 'No personal medical insurance (corporate doesn\'t count)' },
 ]
 
 const FAQS_HEALTH = [
@@ -51,6 +51,10 @@ export default function Step10Health({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Do you pay for medical insurance?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Medical insurance premiums for you and your parents.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           Premiums paid for yourself, your spouse, children, or parents under Section 80D.
         </p>

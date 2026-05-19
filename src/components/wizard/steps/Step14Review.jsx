@@ -31,6 +31,10 @@ export default function Step14Review({ onBack }) {
         <h2 className="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
           Your Tax Results are Ready!
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Review your details before comparing the regimes.
+        </p>
         {isTie ? (
           <p className="text-xl text-brand-muted">
             Both regimes result in the same tax. New Regime is usually simpler to file.

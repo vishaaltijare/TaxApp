@@ -5,9 +5,14 @@ export default function CalculatorPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-brand-bg flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-[#F0F9FF] via-white to-[#F8FAFC] flex flex-col relative overflow-hidden">
+      {/* Subtle Background Blurs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-blue/[0.03] blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-blue/[0.04] blur-3xl" />
+      </div>
       {/* Navbar */}
-      <nav className="bg-white border-b border-brand-border">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-brand-border/60 relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <button
             onClick={() => navigate('/')}
@@ -37,7 +42,9 @@ export default function CalculatorPage() {
         </div>
       </nav>
 
-      <Wizard />
+      <div className="relative z-10 flex-1 flex flex-col min-h-0">
+        <Wizard />
+      </div>
     </div>
   )
 }

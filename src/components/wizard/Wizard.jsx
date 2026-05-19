@@ -60,7 +60,7 @@ export default function Wizard() {
   const currentMain = STEP_TO_MAIN[currentStepId] || 1
 
   return (
-    <div className="flex-1 flex flex-col min-h-0 bg-brand-bg relative">
+    <div className="flex-1 flex flex-col min-h-0 relative bg-transparent">
       {/* Top Progress Bar */}
       <div className="sticky top-16 z-40">
         <ProgressBar currentMain={currentMain} />
@@ -71,7 +71,7 @@ export default function Wizard() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative">
           
           {/* Left: Wizard Step Content */}
-          <div className={`w-full pb-16 lg:pb-0 ${currentStepId === 'review' ? '' : 'lg:flex-[3] lg:min-w-0'}`}>
+          <div className={`w-full pb-16 lg:pb-0 transition-all duration-500 ease-in-out animate-fade-in-up ${currentStepId === 'review' ? '' : 'lg:flex-[3] lg:min-w-0'}`} key={currentStepId}>
             {currentStepId === 'age' && <Step1Age onNext={handleNext} onBack={handleBack} isFirst={true} />}
             {currentStepId === 'salary' && <Step2Salary onNext={handleNext} onBack={handleBack} />}
             {currentStepId === 'state' && <Step3State onNext={handleNext} onBack={handleBack} />}

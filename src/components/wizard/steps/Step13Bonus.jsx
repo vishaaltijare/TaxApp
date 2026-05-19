@@ -5,8 +5,8 @@ import CurrencyInput from '../CurrencyInput'
 import FaqAccordion from '../FaqAccordion'
 
 const BONUS_OPTIONS = [
-  { value: 'yes', label: 'Yes, I expect a bonus', description: 'Performance bonus, joining bonus, variable pay, etc.' },
-  { value: 'no', label: 'No, no bonus', description: 'My salary is entirely fixed' },
+  { value: 'yes', icon: '🎁', label: 'Yes, I expect a bonus', description: 'Performance bonus, joining bonus, variable pay, etc.' },
+  { value: 'no', icon: '🚫', label: 'No, no bonus', description: 'My salary is entirely fixed' },
 ]
 
 const FAQS_BONUS = [
@@ -47,6 +47,10 @@ export default function Step13Bonus({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Will you receive any bonus or variable pay?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Bonuses are fully taxable, but can be offset with proper investments.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           Bonuses are fully taxable and can push you into a higher tax bracket.
         </p>

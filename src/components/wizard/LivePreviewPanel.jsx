@@ -11,22 +11,27 @@ export default function LivePreviewPanel() {
 
   if (!hasData) {
     return (
-      <div className="card p-6 lg:sticky lg:top-24 animate-fade-in hidden lg:block">
-        <p className="section-label mb-4">Live Tax Estimate</p>
-        <div className="flex flex-col items-center justify-center py-10 text-center">
-          <div className="w-16 h-16 rounded-2xl bg-brand-blue-xlight border border-brand-blue-light flex items-center justify-center mb-4">
-            <span className="text-2xl">🧮</span>
+      <div className="card p-6 lg:sticky lg:top-24 animate-fade-in hidden lg:block bg-white/80 backdrop-blur-md">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted">Live Estimate</p>
+        </div>
+        
+        <div className="flex flex-col items-center justify-center py-8 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-brand-blue/[0.03] border border-brand-blue/10 flex items-center justify-center mb-5 relative">
+            <div className="absolute inset-0 rounded-2xl border-2 border-brand-blue/20 animate-[spin_4s_linear_infinite] border-t-transparent" />
+            <span className="text-2xl animate-pulse">✨</span>
           </div>
-          <p className="font-semibold text-brand-text mb-2">Waiting for your information…</p>
-          <p className="text-brand-muted text-sm leading-relaxed max-w-xs">
-            Your live tax estimate will appear here as you answer each question.
+          <p className="font-semibold text-brand-text mb-2">Preparing your personalized estimate</p>
+          <p className="text-brand-muted text-sm leading-relaxed max-w-[250px]">
+            Your tax calculation will appear here in real-time as you enter your details.
           </p>
         </div>
-        <div className="mt-4 space-y-2">
-          {['Gross Salary', 'Total Deductions', 'Taxable Income', 'Income Tax', 'Take-Home'].map((label) => (
-            <div key={label} className="flex justify-between items-center py-2 border-b border-brand-border last:border-0">
+        <div className="mt-4 space-y-3">
+          {['Gross Salary', 'Total Deductions', 'Taxable Income', 'Estimated Tax'].map((label, idx) => (
+            <div key={label} className="flex justify-between items-center py-2.5 border-b border-brand-border/40 last:border-0">
               <span className="text-brand-muted text-sm">{label}</span>
-              <span className="text-brand-border-hover text-sm font-medium">—</span>
+              <div className="h-4 bg-brand-border/50 rounded animate-pulse" style={{ width: `${40 + (idx * 15)}px` }}></div>
             </div>
           ))}
         </div>
@@ -57,14 +62,17 @@ export default function LivePreviewPanel() {
 
       {/* Main Panel (Sticky side on desktop, Absolute drawer on mobile) */}
       <div className={`
-        fixed inset-x-0 bottom-0 z-40 bg-white rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] pb-24 px-6 pt-8 transition-transform duration-300 ease-in-out
+        fixed inset-x-0 bottom-0 z-40 bg-white/90 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] pb-24 px-6 pt-8 transition-transform duration-300 ease-in-out
         lg:static lg:bg-transparent lg:shadow-none lg:rounded-none lg:p-0 lg:transform-none lg:block
         ${isMobileOpen ? 'translate-y-0' : 'translate-y-full lg:translate-y-0'}
       `}>
-        <div className="card p-6 lg:sticky lg:top-24 animate-fade-in max-h-[80vh] overflow-y-auto lg:max-h-none lg:overflow-visible">
+        <div className="card p-6 lg:sticky lg:top-24 animate-fade-in max-h-[80vh] overflow-y-auto lg:max-h-none lg:overflow-visible bg-white/80 backdrop-blur-md">
           <div className="flex items-center justify-between mb-4">
-            <p className="section-label">Live Tax Estimate</p>
-            <span className="badge-blue text-xs">New Regime</span>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted">Live Estimate</p>
+            </div>
+            <span className="bg-brand-blue/10 text-brand-blue border border-brand-blue/20 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">New Regime</span>
           </div>
 
           <p className="text-xs text-brand-muted mb-4 italic">Updates as you answer each question</p>
@@ -92,10 +100,13 @@ export default function LivePreviewPanel() {
             </div>
           </div>
 
-          <div className="mt-4 bg-brand-blue rounded-xl p-4 text-center">
-            <p className="text-blue-100 text-xs mb-1">Estimated Total Tax</p>
-            <p className="text-white font-bold text-xl">{formatINR(newRegime.totalTax)}<span className="text-blue-200 font-normal text-sm">/yr</span></p>
-            <p className="text-blue-200 text-xs mt-1">{formatINR(Math.round(newRegime.totalTax / 12))}/month</p>
+          <div className="mt-6 bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-2xl p-5 text-center shadow-[0_8px_30px_rgba(30,64,175,0.2)] relative overflow-hidden">
+            {/* Subtle gloss effect */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-white/5 rounded-b-[100%] pointer-events-none" />
+            
+            <p className="text-white/80 text-xs font-medium uppercase tracking-wider mb-1">Estimated Total Tax</p>
+            <p className="text-white font-bold text-3xl tabular-nums tracking-tight animate-fade-in-up">{formatINR(newRegime.totalTax)}<span className="text-white/60 font-medium text-sm ml-1 tracking-normal">/yr</span></p>
+            <p className="text-white/70 text-sm mt-2 font-medium">{formatINR(Math.round(newRegime.totalTax / 12))}/month</p>
           </div>
 
           <p className="text-xs text-brand-muted text-center mt-3 italic">

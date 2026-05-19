@@ -4,12 +4,12 @@ import FaqAccordion from '../FaqAccordion'
 
 const CITY_OPTIONS = [
   {
-    value: 'metro',
+    value: 'metro', icon: '🏢',
     label: 'Metro city',
     description: 'Delhi, Mumbai, Kolkata, or Chennai — 50% HRA exemption limit',
   },
   {
-    value: 'non_metro',
+    value: 'non_metro', icon: '🏡',
     label: 'Any other city',
     description: 'Bangalore, Hyderabad, Pune, or any other city — 40% HRA exemption limit',
   },
@@ -37,6 +37,10 @@ export default function Step4City({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Which city do you live in?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Metro vs Non-Metro city affects your HRA exemption limits.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           This helps us calculate your HRA (House Rent Allowance) exemption correctly.
         </p>

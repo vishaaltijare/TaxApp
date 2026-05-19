@@ -38,6 +38,10 @@ export default function Step2Salary({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           How much money lands in your<br />bank account every month?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          This is your gross income before any deductions.
+        </p>
         <p className="text-brand-muted mt-2 text-sm leading-relaxed">
           This is your <strong>take-home</strong> after PF, taxes, and any other deductions — exactly what you receive.
         </p>

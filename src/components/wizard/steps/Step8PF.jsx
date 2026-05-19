@@ -5,8 +5,8 @@ import CurrencyInput from '../CurrencyInput'
 import FaqAccordion from '../FaqAccordion'
 
 const PF_OPTIONS = [
-  { value: 'yes', label: 'Yes, PF is deducted', description: 'Employee Provident Fund (EPF) is deducted from your salary' },
-  { value: 'no', label: 'No, no PF deduction', description: 'You do not contribute to EPF' },
+  { value: 'yes', icon: '💼', label: 'Yes, PF is deducted', description: 'Employee Provident Fund (EPF) is deducted from your salary' },
+  { value: 'no', icon: '🚫', label: 'No, no PF deduction', description: 'You do not contribute to EPF' },
   { value: 'not_sure', label: 'I\'m not sure', description: 'We\'ll assume standard 12% of basic if basic is provided, else none.' },
 ]
 
@@ -53,6 +53,10 @@ export default function Step8PF({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Does your company deduct EPF?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Your EPF contributions are tax-free under section 80C.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           Your contribution to Employee Provident Fund (EPF) counts towards Section 80C.
         </p>

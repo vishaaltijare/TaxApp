@@ -3,9 +3,9 @@ import RadioGroup from '../RadioGroup'
 import FaqAccordion from '../FaqAccordion'
 
 const AGE_OPTIONS = [
-  { value: 'below_60', label: 'Below 60 years', description: 'Standard tax exemption limit of ₹2,50,000 under old regime' },
-  { value: 'senior_60_79', label: '60 to 79 years (Senior Citizen)', description: 'Higher exemption limit of ₹3,00,000 under old regime' },
-  { value: 'super_senior_80', label: '80 years and above (Super Senior Citizen)', description: 'Highest exemption limit of ₹5,00,000 under old regime' },
+  { value: 'below_60', icon: '🧑', label: 'Below 60 years', description: 'Standard tax exemption limit of ₹2,50,000 under old regime' },
+  { value: 'senior_60_79', icon: '👴', label: '60 to 79 years (Senior Citizen)', description: 'Higher exemption limit of ₹3,00,000 under old regime' },
+  { value: 'super_senior_80', icon: '🧓', label: '80 years and above (Super Senior Citizen)', description: 'Highest exemption limit of ₹5,00,000 under old regime' },
 ]
 
 const FAQS = [
@@ -31,6 +31,10 @@ export default function Step1Age({ onNext, onBack, isFirst }) {
           How old are you<br />
           <span className="text-brand-muted font-normal text-lg">as on 31st March 2026?</span>
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          This helps us determine your base tax exemption limit.
+        </p>
       </div>
 
       <RadioGroup

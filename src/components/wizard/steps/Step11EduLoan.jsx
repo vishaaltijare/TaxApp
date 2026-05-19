@@ -5,8 +5,8 @@ import CurrencyInput from '../CurrencyInput'
 import FaqAccordion from '../FaqAccordion'
 
 const EDU_LOAN_OPTIONS = [
-  { value: 'yes', label: 'Yes, I am repaying an education loan', description: 'Under Section 80E (interest only)' },
-  { value: 'no', label: 'No, I don\'t have one', description: 'No education loan deductions' },
+  { value: 'yes', icon: '🎓', label: 'Yes, I am repaying an education loan', description: 'Under Section 80E (interest only)' },
+  { value: 'no', icon: '🚫', label: 'No, I don\'t have one', description: 'No education loan deductions' },
 ]
 
 const FAQS_EDU = [
@@ -47,6 +47,10 @@ export default function Step11EduLoan({ onNext, onBack }) {
         <h2 className="text-2xl sm:text-3xl font-bold text-brand-text leading-snug">
           Are you paying interest on an education loan?
         </h2>
+        <p className="text-brand-muted mt-3 text-sm font-medium flex items-center gap-2">
+          <svg className="w-4 h-4 text-brand-blue/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Interest paid on education loans is fully deductible.
+        </p>
         <p className="text-brand-muted mt-2 text-sm">
           Section 80E allows a full deduction on the interest paid for higher education loans.
         </p>
