@@ -2,8 +2,8 @@
 export default function CurrencyInput({ id, value, onChange, placeholder, error, hint, min, max }) {
   return (
     <div>
-      <div className={`flex items-center border-2 rounded-xl bg-white transition-all duration-200
-        ${error ? 'border-red-400' : 'border-brand-border focus-within:border-brand-blue focus-within:shadow-focus'}`}>
+      <div className={`flex items-center border-2 rounded-xl bg-white/60 backdrop-blur-md shadow-[0_2px_10px_rgb(0,0,0,0.03)] transition-all duration-300 ease-out group hover:bg-white/90 hover:shadow-[0_4px_15px_rgb(0,0,0,0.05)] hover:border-white
+        ${error ? 'border-red-400' : 'border-white focus-within:bg-white focus-within:border-brand-blue/50 focus-within:ring-4 focus-within:ring-brand-blue/10'}`}>
         <span className="pl-4 pr-2 text-brand-muted font-semibold text-lg select-none">₹</span>
         <input
           id={id}

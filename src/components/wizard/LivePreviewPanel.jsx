@@ -11,7 +11,7 @@ export default function LivePreviewPanel() {
 
   if (!hasData) {
     return (
-      <div className="card p-6 lg:sticky lg:top-24 animate-fade-in hidden lg:block bg-white/80 backdrop-blur-md">
+      <div className="card p-6 lg:sticky lg:top-24 animate-fade-in hidden lg:block">
         <div className="flex items-center gap-2 mb-6">
           <div className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted">Live Estimate</p>
@@ -66,7 +66,7 @@ export default function LivePreviewPanel() {
         lg:static lg:bg-transparent lg:shadow-none lg:rounded-none lg:p-0 lg:transform-none lg:block
         ${isMobileOpen ? 'translate-y-0' : 'translate-y-full lg:translate-y-0'}
       `}>
-        <div className="card p-6 lg:sticky lg:top-24 animate-fade-in max-h-[80vh] overflow-y-auto lg:max-h-none lg:overflow-visible bg-white/80 backdrop-blur-md">
+        <div className="card p-6 lg:sticky lg:top-24 animate-fade-in max-h-[80vh] overflow-y-auto lg:max-h-none lg:overflow-visible">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />

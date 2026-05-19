@@ -5,14 +5,23 @@ export default function CalculatorPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F0F9FF] via-white to-[#F8FAFC] flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#E6F4FF] via-[#F8FAFC] to-[#EFF6FF] flex flex-col relative overflow-hidden isolate">
+      {/* Faint Noise Texture */}
+      <div 
+        className="absolute inset-0 pointer-events-none mix-blend-multiply z-[-1]" 
+        style={{ 
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")',
+          opacity: 0.02
+        }}
+      ></div>
+
       {/* Subtle Background Blurs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-blue/[0.03] blur-3xl" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-blue/[0.04] blur-3xl" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[-2]">
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-brand-blue/[0.06] blur-[120px]" />
+        <div className="absolute bottom-[-15%] right-[-15%] w-[70%] h-[70%] rounded-full bg-brand-blue/[0.04] blur-[140px]" />
       </div>
       {/* Navbar */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-brand-border/60 relative z-10">
+      <nav className="bg-white/60 backdrop-blur-xl border-b border-white/50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <button
             onClick={() => navigate('/')}

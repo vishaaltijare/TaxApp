@@ -59,17 +59,17 @@
 
   /* ── Cards ── */
   .card {
-    @apply bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-brand-border/60 transition-shadow duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)];
+    @apply bg-white/70 backdrop-blur-2xl rounded-3xl shadow-[0_10px_40px_rgb(0,0,0,0.06)] border border-white transition-all duration-300 hover:shadow-[0_16px_50px_rgb(0,0,0,0.08)];
   }
 
   /* ── Input fields ── */
   .input-field {
-    @apply w-full px-5 py-4 rounded-xl border-2 border-brand-border/80
-           text-base text-brand-text bg-white shadow-sm
+    @apply w-full px-5 py-4 rounded-xl border-2 border-white
+           text-base text-brand-text bg-white/60 backdrop-blur-md shadow-[0_2px_10px_rgb(0,0,0,0.03)]
            transition-all duration-300 ease-out
-           focus:outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10
-           hover:border-brand-border-hover
-           placeholder:text-brand-muted/70;
+           focus:outline-none focus:bg-white focus:border-brand-blue/50 focus:ring-4 focus:ring-brand-blue/10
+           hover:bg-white/90 hover:border-white hover:shadow-[0_4px_15px_rgb(0,0,0,0.05)]
+           placeholder:text-brand-muted/60;
   }
 
   /* ── Section label ── */

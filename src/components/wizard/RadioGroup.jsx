@@ -10,8 +10,8 @@ export default function RadioGroup({ name, options, value, onChange }) {
             htmlFor={`${name}-${opt.value}`}
             className={`flex items-start gap-4 p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 ease-out group
               ${selected
-                ? 'border-brand-blue bg-brand-blue-xlight shadow-[0_0_20px_rgba(30,64,175,0.1)] -translate-y-0.5'
-                : 'border-brand-border/80 bg-white hover:border-brand-blue-light hover:shadow-md hover:-translate-y-0.5'
+                ? 'border-brand-blue bg-white/90 backdrop-blur-md shadow-[0_4px_25px_rgba(30,64,175,0.12)] -translate-y-0.5'
+                : 'border-white/80 bg-white/50 backdrop-blur-sm shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:bg-white/80 hover:border-brand-blue/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-0.5'
               }`}
           >
             {/* custom radio / checkmark */}

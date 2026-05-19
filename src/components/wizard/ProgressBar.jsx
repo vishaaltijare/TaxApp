@@ -4,7 +4,7 @@ export default function ProgressBar({ currentMain }) {
   const percentage = Math.round(((currentMain - 1) / (TOTAL_MAIN_STEPS - 1)) * 100)
 
   return (
-    <div className="bg-white/80 backdrop-blur-md border-b border-brand-border px-4 sm:px-6 pt-5 pb-6">
+    <div className="bg-white/60 backdrop-blur-xl border-b border-white/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] px-4 sm:px-6 pt-5 pb-6 relative z-20">
       <div className="max-w-5xl mx-auto">
         
         {/* Header Info */}
