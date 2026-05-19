@@ -36,94 +36,7 @@ function RouteIcon({ className = "w-5 h-5 text-white" }) {
   )
 }
 
-/* ── Premium Calculator Preview Card (Right Side) ── */
-function CalculatorPreviewCard() {
-  const [count, setCount] = useState(0)
-  
-  useEffect(() => {
-    // Simple simulated counting effect
-    const interval = setInterval(() => {
-      setCount(prev => (prev < 43500 ? prev + 1500 : 43500))
-    }, 40)
-    return () => clearInterval(interval)
-  }, [])
 
-  return (
-    <div className="relative mx-auto max-w-[420px] animate-float z-20">
-      {/* Background soft glow */}
-      <div className="absolute inset-0 bg-brand-blue blur-[80px] opacity-30 rounded-full" />
-      
-      <div className="relative glass-card rounded-2xl p-6 overflow-hidden border-t-white/30 border-l-white/30 shadow-2xl">
-        {/* top bar */}
-        <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            <span className="text-white/70 text-xs font-semibold tracking-wider uppercase">Live AI Analysis</span>
-          </div>
-          <span className="glass-pill !text-[10px]">FY 2025–26</span>
-        </div>
-
-        <div className="space-y-6">
-          {/* monthly salary */}
-          <div className="flex justify-between items-end">
-            <div>
-              <p className="text-white/60 text-xs font-medium mb-1">Monthly Take-home</p>
-              <p className="text-white text-2xl font-bold tracking-tight">₹50,000</p>
-            </div>
-            <div className="h-8 w-24 bg-white/5 rounded-md flex items-end gap-1 p-1 justify-center">
-               <div className="w-1.5 bg-brand-blue-light h-3 rounded-t-sm" />
-               <div className="w-1.5 bg-brand-blue-light h-5 rounded-t-sm" />
-               <div className="w-1.5 bg-brand-blue h-6 rounded-t-sm" />
-               <div className="w-1.5 bg-brand-green h-full rounded-t-sm" />
-            </div>
-          </div>
-
-          {/* comparison rows */}
-          <div className="space-y-3">
-            {/* old regime */}
-            <div className="bg-white/5 rounded-xl p-4 border border-white/10 transition-colors hover:bg-white/10">
-              <div className="flex justify-between items-center">
-                <p className="text-white/70 text-sm font-medium">Old Regime</p>
-                <p className="text-white font-bold">₹42,100<span className="text-white/50 text-xs font-normal">/mo</span></p>
-              </div>
-            </div>
-
-            {/* new regime */}
-            <div className="bg-brand-green/10 rounded-xl p-4 border border-brand-green/30 relative overflow-hidden transition-colors hover:bg-brand-green/20">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-brand-green/20 blur-2xl rounded-full" />
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center gap-2">
-                  <p className="text-brand-green-light text-sm font-semibold">New Regime</p>
-                  <span className="bg-brand-green text-white text-[9px] font-bold px-1.5 py-0.5 rounded-sm uppercase tracking-wider">Winner</span>
-                </div>
-                <p className="text-brand-green-light font-bold text-lg tracking-tight">₹{count.toLocaleString()}<span className="text-brand-green/70 text-xs font-normal">/mo</span></p>
-              </div>
-              <div className="w-full bg-black/20 rounded-full h-1.5 mt-3 overflow-hidden">
-                <div className="bg-gradient-to-r from-brand-green to-emerald-400 h-1.5 rounded-full" style={{ width: `${(count/43500)*100}%`, transition: 'width 0.1s linear' }} />
-              </div>
-            </div>
-          </div>
-
-          {/* savings banner */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
-            <div>
-              <p className="text-white/60 text-xs mb-0.5">Extra savings</p>
-              <p className="text-brand-green-light font-bold flex items-center gap-1">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-                +₹16,800/yr
-              </p>
-            </div>
-            <button className="text-xs bg-white text-brand-blue font-bold px-4 py-2 rounded-lg hover:bg-brand-blue-xlight transition-colors">
-              See Breakdown
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 /* ── Social Proof / Logo Strip ── */
 function SocialProof() {
@@ -147,7 +60,7 @@ function FeatureGrid() {
     { icon: '🔒', title: 'Privacy First', desc: 'No signup. No data storage. Everything is local.' },
   ]
   return (
-    <div className="grid sm:grid-cols-2 gap-4 lg:gap-6 mt-16 max-w-4xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+    <div className="grid sm:grid-cols-2 gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
       {cards.map((c) => (
         <div key={c.title} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
           <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-xl">
@@ -217,8 +130,6 @@ export default function LandingPage() {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#how-it-works" className="text-sm font-medium text-brand-muted hover:text-brand-blue transition-colors">How it Works</a>
-            <a href="#guide" className="text-sm font-medium text-brand-muted hover:text-brand-blue transition-colors">Tax Guide</a>
-            <a href="#faq" className="text-sm font-medium text-brand-muted hover:text-brand-blue transition-colors">FAQ</a>
           </div>
 
           {/* Right side CTA */}
@@ -273,12 +184,7 @@ export default function LandingPage() {
                   Check My Savings
                   <ArrowRightIcon />
                 </button>
-                <button
-                  className="btn-secondary !bg-white/10 !border-white/20 !text-white hover:!bg-white/20 backdrop-blur-sm !py-4 !px-8 !text-lg transition-all"
-                  onClick={() => navigate('/calculator')}
-                >
-                  See Demo
-                </button>
+
               </div>
 
               {/* Trust Badges under CTA */}
@@ -295,15 +201,12 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Right: Dynamic Preview Card (Takes up 5 cols) */}
-            <div className="lg:col-span-5 lg:ml-auto w-full max-w-md mx-auto lg:mx-0">
-              <CalculatorPreviewCard />
+            {/* Right: Feature Grid (Takes up 5 cols) */}
+            <div className="lg:col-span-5 lg:ml-auto w-full mt-10 lg:mt-0">
+              <FeatureGrid />
             </div>
 
           </div>
-          
-          {/* New Grid Feature Cards directly in Hero */}
-          <FeatureGrid />
         </div>
       </section>
 
