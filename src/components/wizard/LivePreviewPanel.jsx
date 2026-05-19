@@ -7,7 +7,7 @@ export default function LivePreviewPanel() {
   const state = useTaxStore()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
-  const hasData = state.monthlyTakeHome && Number(state.monthlyTakeHome) >= 10000
+  const hasData = state.annualGrossSalary && Number(state.annualGrossSalary) >= 100000
 
   if (!hasData) {
     return (

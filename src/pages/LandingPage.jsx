@@ -77,7 +77,7 @@ function FeatureGrid() {
 /* ── How It Works Section ── */
 function HowItWorks() {
   const steps = [
-    { num: '1', title: 'Enter salary details', desc: 'Tell us your monthly take-home salary. We handle the complex math.' },
+    { num: '1', title: 'Enter salary details', desc: 'Tell us your annual gross salary. We handle the complex math.' },
     { num: '2', title: 'Answer simple questions', desc: 'Rent, investments, home loan? Just plain English questions.' },
     { num: '3', title: 'See your best regime', desc: 'Get a clear AI-driven recommendation and full slab breakdown instantly.' },
   ]

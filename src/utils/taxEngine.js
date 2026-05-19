@@ -72,12 +72,8 @@ function applyRebate(tax, income, regime) {
 
 export function calculateTax(state) {
   // 1. Calculate Gross Income
-  // Take-home = Gross - PF - PT - TDS. We don't know TDS, so we just use take-home as a proxy if basic isn't defined,
-  // but it's better to reconstruct Gross = Monthly Take Home + PF + PT.
-  // We'll use a simpler assumption: Monthly Take Home * 12 is net cash. 
-  // If they provided basic/PF, we add it back to get Gross.
+  let grossSalary = Number(state.annualGrossSalary || 0)
   
-  const takeHomeAnnual = Number(state.monthlyTakeHome || 0) * 12
   const basicAnnual = Number(state.basicSalaryMonthly || 0) * 12
   const bonus = Number(state.bonusAnnual || 0)
   
@@ -86,9 +82,6 @@ export function calculateTax(state) {
   
   const stateData = STATES.find(s => s.value === state.state)
   const ptAnnual = stateData?.hasPT ? 2500 : 0 // Rough average PT is ~2500/yr
-
-  // Reconstruct Gross Salary (excluding Employer NPS which is a perquisite but deductible)
-  let grossSalary = takeHomeAnnual + pfEmployeeAnnual + ptAnnual
   
   // If we have HRA, it's already part of take-home/gross.
   const hraReceivedAnnual = state.hasHRA === true ? Number(state.monthlyHRA || 0) * 12 : 0

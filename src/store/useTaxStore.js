@@ -7,8 +7,8 @@ const initialState = {
   // Step 1 — Age
   ageGroup: null, // 'below_60' | 'senior_60_79' | 'super_senior_80'
 
-  // Step 2 — Monthly take-home salary
-  monthlyTakeHome: '',
+  // Step 2 — Annual gross salary
+  annualGrossSalary: '',
 
   // Step 3 — State
   state: '',
