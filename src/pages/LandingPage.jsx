@@ -26,12 +26,12 @@ function ArrowRightIcon() {
   )
 }
 
-function LightbulbIcon({ className = "w-5 h-5 text-white" }) {
+function RouteIcon({ className = "w-5 h-5 text-white" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 18h6"></path>
-      <path d="M10 22h4"></path>
-      <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+      <circle cx="6" cy="19" r="3"></circle>
+      <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path>
+      <circle cx="18" cy="5" r="3"></circle>
     </svg>
   )
 }
@@ -131,7 +131,7 @@ function SocialProof() {
     <div className="border-y border-brand-border bg-white py-10 relative z-10 animate-fade-in-up">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <p className="text-brand-muted text-sm sm:text-base font-medium max-w-2xl mx-auto">
-          "Thousands of salaried professionals struggle choosing between the old and new tax regimes. <span className="text-brand-blue font-semibold">TaxSense makes it mathematically simple.</span>"
+          "Thousands of salaried professionals struggle choosing between the old and new tax regimes. <span className="text-brand-blue font-semibold">TaxRoute makes it mathematically simple.</span>"
         </p>
       </div>
     </div>
@@ -209,9 +209,9 @@ export default function LandingPage() {
           {/* Logo */}
           <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
             <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center shadow-inner group-hover:bg-brand-blue-dark transition-colors">
-              <LightbulbIcon className="w-5 h-5 text-white" />
+              <RouteIcon className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-brand-blue text-xl tracking-tight">TaxSense</span>
+            <span className="font-bold text-brand-blue text-2xl tracking-tight">TaxRoute</span>
           </div>
 
           {/* Desktop Links */}
@@ -343,9 +343,9 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-8 items-center justify-between mb-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center shadow-inner">
-                <LightbulbIcon className="w-5 h-5 text-white" />
+                <RouteIcon className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-brand-blue text-xl tracking-tight">TaxSense</span>
+              <span className="font-bold text-brand-blue text-2xl tracking-tight">TaxRoute</span>
             </div>
             
             <div className="flex items-center md:justify-center gap-2 text-brand-green text-sm font-medium bg-brand-green/10 px-4 py-2 rounded-full w-fit md:mx-auto">
@@ -368,7 +368,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-center text-slate-400 text-xs mt-8 font-medium">
-            © 2026 TaxSense · For salaried individuals in India · AY 2026–27
+            © 2026 TaxRoute · For salaried individuals in India · AY 2026–27
           </p>
         </div>
       </footer>
